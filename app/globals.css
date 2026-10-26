@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+:root {
+  /* SKYVERIYA Core Reference Palette */
+  --terracotta: #BC4639;
+  --terracotta-deep: #963125;
+  --terracotta-dark: #78241B;
+  --wine: #5C2018;
+  --wine-deep: #3D130E;
+  --cerulean: #4285F4;
+  --blush: #D4A59A;
+  --ivory: #F3E0DC;
+  --ivory-light: #FAF4F2;
+  --ivory-muted: rgba(243, 224, 220, 0.65);
+
+  /* Typography */
+  --font-serif-editorial: "Hoefler Text", Georgia, "Playfair Display", Garamond, "Times New Roman", serif;
+  --font-sans-editorial: var(--font-josefin), "Josefin Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@theme inline {
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-deep: var(--terracotta-deep);
+  --color-terracotta-dark: var(--terracotta-dark);
+  --color-wine: var(--wine);
+  --color-wine-deep: var(--wine-deep);
+  --color-cerulean: var(--cerulean);
+  --color-blush: var(--blush);
+  --color-ivory: var(--ivory);
+  --color-ivory-light: var(--ivory-light);
+
+  --font-display: var(--font-sans-editorial);
+  --font-serif: var(--font-serif-editorial);
+}
+
+body {
+  background-color: var(--terracotta);
+  color: var(--ivory);
+  font-family: var(--font-serif-editorial);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Utility Classes */
+.font-display {
+  font-family: var(--font-sans-editorial);
+}
+
+.font-editorial {
+  font-family: var(--font-serif-editorial);
+}
+
+/* Subtle Bespoke Paper Grain Overlay */
+.editorial-grain {
+  background-image: radial-gradient(rgba(243, 224, 220, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Cloud Ambient Drift Keyframe Animations */
+@keyframes cloudFloatSlow {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  33% {
+    transform: translate(8px, -12px) rotate(0.8deg);
+  }
+  66% {
+    transform: translate(-10px, -6px) rotate(-0.6deg);
+  }
+}
+
+@keyframes cloudFloatMedium {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-12px, -16px) rotate(-1deg);
+  }
+}
+
+@keyframes cloudFloatFast {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  40% {
+    transform: translate(10px, -14px) rotate(1.2deg);
+  }
+  80% {
+    transform: translate(-6px, 8px) rotate(-0.5deg);
+  }
+}
+
+@keyframes celestialPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
+}
+
+.animate-cloud-slow {
+  animation: cloudFloatSlow 16s ease-in-out infinite;
+}
+
+.animate-cloud-medium {
+  animation: cloudFloatMedium 12s ease-in-out infinite;
+}
+
+.animate-cloud-fast {
+  animation: cloudFloatFast 10s ease-in-out infinite;
+}
+
+.animate-celestial-pulse {
+  animation: celestialPulse 4s ease-in-out infinite;
+}
+
+/* Pause animation when offscreen or tab is hidden to preserve battery and GPU */
+.motion-paused,
+.motion-paused *,
+.tab-hidden,
+.tab-hidden * {
+  animation-play-state: paused !important;
+}
+
+/* Narrow touch screens: disable continuous floating to preserve frame rate */
+@media (max-width: 767px) {
+  .animate-cloud-slow,
+  .animate-cloud-medium,
+  .animate-cloud-fast {
+    animation: none !important;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Restrained Section Reveal */
+.editorial-reveal {
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Accessibility: Strict Respect for prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .animate-cloud-slow,
+  .animate-cloud-medium,
+  .animate-cloud-fast,
+  .animate-celestial-pulse,
+  .animate-fade-in {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+
+
