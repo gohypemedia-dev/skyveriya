@@ -15,11 +15,11 @@ export default function Hero() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // 1. Accessibility: respects prefers-reduced-motion
+    // Accessibility: respects prefers-reduced-motion
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (motionQuery.matches) return;
 
-    // 2. Mobile restraint: static composition on mobile (< 768px)
+    // Mobile restraint: static composition on touch devices (< 768px)
     if (window.innerWidth < 768) return;
 
     const hero = heroRef.current;
@@ -36,7 +36,6 @@ export default function Hero() {
       }
     };
 
-    // Restrained hero cloud-opening transition driven by scroll progress
     const applyOpening = () => {
       if (!isVisible) {
         ticking = false;
@@ -46,16 +45,15 @@ export default function Hero() {
       const scrollY = window.scrollY || window.pageYOffset;
       const progress = Math.max(0, Math.min(1, scrollY / cachedHeroHeight));
 
-      // Foreground framing clouds gently open outward as the user scrolls
       if (fgBLRef.current) {
-        const blX = Math.round(-progress * 30 * 10) / 10;
-        const blY = Math.round(progress * 20 * 10) / 10;
+        const blX = Math.round(-progress * 28 * 10) / 10;
+        const blY = Math.round(progress * 18 * 10) / 10;
         fgBLRef.current.style.transform = `translate3d(${blX}px, ${blY}px, 0)`;
       }
 
       if (fgTRRef.current) {
-        const trX = Math.round(progress * 30 * 10) / 10;
-        const trY = Math.round(-progress * 20 * 10) / 10;
+        const trX = Math.round(progress * 28 * 10) / 10;
+        const trY = Math.round(-progress * 18 * 10) / 10;
         fgTRRef.current.style.transform = `translate3d(${trX}px, ${trY}px, 0)`;
       }
 
@@ -92,19 +90,8 @@ export default function Hero() {
     );
     observer.observe(hero);
 
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        if (rafId) window.cancelAnimationFrame(rafId);
-        ticking = false;
-      } else if (isVisible) {
-        updateMeasurements();
-        applyOpening();
-      }
-    };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleResize, { passive: true });
-    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     updateMeasurements();
     applyOpening();
@@ -114,7 +101,6 @@ export default function Hero() {
       if (rafId) window.cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
       if (fgBLRef.current) fgBLRef.current.style.transform = "";
       if (fgTRRef.current) fgTRRef.current.style.transform = "";
     };
@@ -126,21 +112,21 @@ export default function Hero() {
       className="relative min-h-[75vh] md:min-h-[82vh] w-full flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16 py-20 sm:py-28 overflow-hidden bg-[#BC4639] text-[#F3E0DC] select-none"
     >
       {/* Subtle Paper Grain */}
-      <div className="absolute inset-0 editorial-grain pointer-events-none opacity-20" />
+      <div className="absolute inset-0 editorial-grain-inverse pointer-events-none opacity-25" />
 
-      {/* Foreground Framing Cloud: Bottom-Left */}
+      {/* Foreground Framing Cloud: Bottom-Left (Ivory & Dusty Rose on Terracotta) */}
       <div
         ref={fgBLRef}
-        className="absolute -bottom-6 -left-12 sm:bottom-0 sm:left-0 z-10 pointer-events-none opacity-80"
+        className="absolute -bottom-6 -left-12 sm:bottom-0 sm:left-0 z-10 pointer-events-none opacity-85"
         aria-hidden="true"
       >
         <LargeSweepingCloudBottomLeft className="w-[260px] sm:w-[380px] lg:w-[480px]" />
       </div>
 
-      {/* Foreground Framing Cloud: Upper-Right */}
+      {/* Foreground Framing Cloud: Upper-Right (Ivory & Dusty Rose on Terracotta) */}
       <div
         ref={fgTRRef}
-        className="absolute -top-6 -right-12 sm:top-0 sm:right-0 z-10 pointer-events-none opacity-80"
+        className="absolute -top-6 -right-12 sm:top-0 sm:right-0 z-10 pointer-events-none opacity-85"
         aria-hidden="true"
       >
         <ComplementaryCloudTopRight className="w-[240px] sm:w-[360px] lg:w-[440px]" />
@@ -166,18 +152,18 @@ export default function Hero() {
           Nine Clouds, infinite values
         </p>
 
-        {/* Functional Actions */}
+        {/* Coordinated Actions: Primary Blue & Secondary Inverse Outline */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
           <Link
             href="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#F3E0DC] text-[#5C2018] font-display text-xs uppercase tracking-[0.16em] font-medium transition-colors hover:bg-[#FAF4F2]"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full btn-primary font-display text-xs uppercase tracking-[0.16em] font-medium shadow-sm"
           >
             Get in touch
           </Link>
 
           <a
             href="#services"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-[#F3E0DC]/40 text-[#F3E0DC] font-display text-xs uppercase tracking-[0.16em] font-medium transition-colors hover:border-[#F3E0DC] hover:bg-[#F3E0DC]/10"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full btn-secondary-inverse font-display text-xs uppercase tracking-[0.16em] font-medium"
           >
             View services
           </a>

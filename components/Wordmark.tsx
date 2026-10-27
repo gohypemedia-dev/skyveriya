@@ -9,7 +9,7 @@ interface WordmarkProps {
 
 export function SkyveriyaEmblem({ className = "w-8 h-8", light = true }: { className?: string; light?: boolean }) {
   const strokeColor = light ? "#F3E0DC" : "#5C2018";
-  const cerulean = "#4285F4";
+  const accentColor = light ? "#D4A59A" : "#BC4639";
   const blush = "#D4A59A";
 
   return (
@@ -21,17 +21,17 @@ export function SkyveriyaEmblem({ className = "w-8 h-8", light = true }: { class
       aria-label="SKYVERIYA Emblem"
     >
       {/* Outer Editorial Geometrics */}
-      <circle cx="50" cy="50" r="46" stroke={strokeColor} strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
-      <circle cx="50" cy="50" r="41" stroke={strokeColor} strokeWidth="1.2" opacity="0.85" />
-      <circle cx="50" cy="50" r="37.5" stroke={blush} strokeWidth="0.75" opacity="0.5" />
+      <circle cx="50" cy="50" r="46" stroke={strokeColor} strokeWidth="1" strokeDasharray="3 3" opacity="0.35" />
+      <circle cx="50" cy="50" r="41" stroke={strokeColor} strokeWidth="1.2" opacity="0.8" />
+      <circle cx="50" cy="50" r="37.5" stroke={accentColor} strokeWidth="0.75" opacity="0.5" />
 
-      {/* Cardinal Celestial Points */}
-      <circle cx="50" cy="9" r="1.5" fill={cerulean} />
-      <circle cx="91" cy="50" r="1.5" fill={cerulean} />
-      <circle cx="50" cy="91" r="1.5" fill={cerulean} />
-      <circle cx="9" cy="50" r="1.5" fill={cerulean} />
+      {/* Cardinal Points */}
+      <circle cx="50" cy="9" r="1.5" fill={accentColor} />
+      <circle cx="91" cy="50" r="1.5" fill={accentColor} />
+      <circle cx="50" cy="91" r="1.5" fill={accentColor} />
+      <circle cx="9" cy="50" r="1.5" fill={accentColor} />
 
-      {/* Central 8-Pointed Celestial Star */}
+      {/* Central 8-Pointed Star */}
       <path
         d="M50 24 L52.5 45 L68 40 L54.5 50 L68 60 L52.5 55 L50 76 L47.5 55 L32 60 L45.5 50 L32 40 L47.5 45 Z"
         fill="none"
@@ -42,10 +42,9 @@ export function SkyveriyaEmblem({ className = "w-8 h-8", light = true }: { class
 
       {/* Core Ornamental Intertwined Cloud Motif */}
       <g transform="translate(18, 28) scale(0.64)">
-        {/* Base Cloud Silhouette */}
         <path
           d="M20 54 C12 54 6 48 6 40 C6 33 11 27 18 26 C19 16 28 8 39 8 C48 8 56 13 59 21 C62 19 66 18 70 18 C80 18 88 26 88 36 C93 38 97 43 97 49 C97 56 91 62 84 62 L20 62"
-          fill={blush}
+          fill={accentColor}
           fillOpacity="0.12"
           stroke={strokeColor}
           strokeWidth="1.8"
@@ -53,7 +52,6 @@ export function SkyveriyaEmblem({ className = "w-8 h-8", light = true }: { class
           strokeLinejoin="round"
         />
 
-        {/* Interior Classical Swirls & Filigree */}
         <path
           d="M20 54 C24 54 28 50 28 46 C28 41 23 37 17 38 C14 38 12 40 12 43"
           stroke={strokeColor}
@@ -73,9 +71,8 @@ export function SkyveriyaEmblem({ className = "w-8 h-8", light = true }: { class
           strokeLinecap="round"
         />
 
-        {/* Central Celestial Blue Jewel */}
-        <circle cx="50" cy="38" r="3.2" fill={cerulean} />
-        <circle cx="50" cy="38" r="6" stroke={cerulean} strokeWidth="0.8" strokeDasharray="1.5 1.5" opacity="0.8" />
+        {/* Central Core Jewel */}
+        <circle cx="50" cy="38" r="3" fill={accentColor} />
       </g>
     </svg>
   );
@@ -88,7 +85,7 @@ export default function Wordmark({
   light = true,
 }: WordmarkProps) {
   const primaryText = light ? "#F3E0DC" : "#5C2018";
-  const subText = light ? "#D4A59A" : "#8C2E24";
+  const subText = light ? "#D4A59A" : "#7A2E24";
 
   if (emblemOnly) {
     return <SkyveriyaEmblem className={className} light={light} />;
@@ -96,20 +93,18 @@ export default function Wordmark({
 
   return (
     <div className={`inline-flex items-center gap-3.5 group select-none ${className}`}>
-      {/* Brand Emblem */}
-      <SkyveriyaEmblem className="w-9 h-9 sm:w-10 sm:h-10 transition-transform duration-500 group-hover:rotate-12" light={light} />
+      <SkyveriyaEmblem className="w-8 h-8 sm:w-9 sm:h-9" light={light} />
 
-      {/* Bespoke Wordmark Typography */}
       <div className="flex flex-col">
         <span
-          className="font-display font-medium text-lg sm:text-xl tracking-[0.28em] uppercase transition-colors duration-300"
+          className="font-display font-medium text-base sm:text-lg tracking-[0.24em] uppercase transition-colors"
           style={{ color: primaryText }}
         >
           SKYVERIYA
         </span>
         {showSubtitle && (
           <span
-            className="font-display text-[9px] sm:text-[10px] tracking-[0.32em] uppercase font-light mt-0.5"
+            className="font-display text-[9px] sm:text-[10px] tracking-[0.28em] uppercase font-light mt-0.5"
             style={{ color: subText }}
           >
             The World of Creators

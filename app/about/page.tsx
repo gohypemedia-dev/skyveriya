@@ -10,20 +10,21 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen flex flex-col bg-[#BC4639] text-[#F3E0DC]">
+    <main className="min-h-screen flex flex-col bg-[#F3E0DC] text-[#5C2018]">
       <Header />
 
-      {/* Hero Banner: Nine skies entrusted. Built for artists. */}
-      <section className="relative w-full py-20 sm:py-28 px-4 sm:px-8 lg:px-16 bg-[#BC4639] text-[#F3E0DC] select-none">
+      {/* Hero: Nine skies entrusted. Built for artists. */}
+      <section className="relative w-full pt-16 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-16 bg-[#F3E0DC] text-[#5C2018] select-none">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-editorial italic text-3xl sm:text-5xl lg:text-6xl text-[#F3E0DC] font-normal leading-tight">
+          <div className="w-10 h-[1.5px] bg-[#BC4639] mb-6" />
+          <h1 className="font-editorial italic text-3xl sm:text-5xl lg:text-6xl text-[#5C2018] font-normal leading-tight">
             Nine skies entrusted. Built for artists.
           </h1>
         </div>
       </section>
 
-      {/* Why "nine skies" Section (Pale Ivory Reading Area) */}
-      <section className="relative w-full py-20 sm:py-28 px-4 sm:px-8 lg:px-16 bg-[#F3E0DC] text-[#5C2018] select-none">
+      {/* Why "nine skies" Section */}
+      <section className="relative w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-16 bg-[#F3E0DC] text-[#5C2018] select-none border-t border-[#5C2018]/15">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-light text-2xl sm:text-3xl uppercase tracking-[0.14em] text-[#5C2018] mb-8">
             Why “nine skies”
@@ -44,13 +45,13 @@ export default function AboutPage() {
       </section>
 
       {/* What we believe Section */}
-      <section className="relative w-full py-20 sm:py-28 px-4 sm:px-8 lg:px-16 bg-[#5C2018] text-[#F3E0DC] select-none border-t border-[#F3E0DC]/15">
+      <section className="relative w-full py-14 sm:py-20 px-4 sm:px-8 lg:px-16 bg-[#FAF4F2] text-[#5C2018] select-none border-t border-[#5C2018]/15">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-light text-2xl sm:text-3xl uppercase tracking-[0.14em] text-[#F3E0DC] mb-10">
+          <h2 className="font-display font-light text-2xl sm:text-3xl uppercase tracking-[0.14em] text-[#5C2018] mb-10">
             What we believe
           </h2>
 
-          <div className="space-y-6 border-l-2 border-[#BC4639] pl-6 font-editorial text-xl sm:text-2xl text-[#F3E0DC] leading-snug">
+          <div className="space-y-6 border-l-2 border-[#BC4639] pl-6 font-editorial text-xl sm:text-2xl text-[#5C2018] leading-snug">
             <p>Art that is documented lasts.</p>
             <p>Art that is presented well travels.</p>
             <p>Art that is protected grows in value.</p>

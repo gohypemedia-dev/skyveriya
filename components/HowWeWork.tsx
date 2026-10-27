@@ -32,7 +32,7 @@ export default function HowWeWork() {
           {principles.map((item, idx) => (
             <div
               key={idx}
-              className="pt-8 border-t border-[#BC4639]/25 first:border-t-0 first:pt-0"
+              className="pt-8 border-t border-[#5C2018]/15 first:border-t-0 first:pt-0"
             >
               <h3 className="font-editorial text-xl sm:text-2xl font-normal text-[#5C2018] mb-3">
                 {item.title}

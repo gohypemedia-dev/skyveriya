@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col bg-[#BC4639] text-[#F3E0DC]">
+    <main className="min-h-screen flex flex-col bg-[#F3E0DC] text-[#5C2018]">
       <Header />
       <Hero />
       <NineCloudsSection />

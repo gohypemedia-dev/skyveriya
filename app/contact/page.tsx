@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen flex flex-col bg-[#BC4639] text-[#F3E0DC]">
+    <main className="min-h-screen flex flex-col bg-[#F3E0DC] text-[#5C2018]">
       <Header />
       <Suspense
         fallback={
-          <div className="min-h-[50vh] flex items-center justify-center font-display text-xs uppercase tracking-widest text-[#D4A59A]">
+          <div className="min-h-[50vh] flex items-center justify-center font-display text-xs uppercase tracking-widest text-[#7A2E24]">
             Loading...
           </div>
         }

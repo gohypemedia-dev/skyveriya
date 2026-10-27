@@ -1,36 +1,70 @@
 @import "tailwindcss";
 
 :root {
-  /* SKYVERIYA Core Client Palette */
-  --terracotta: #BC4639;
-  --wine: #5C2018;
-  --wine-deep: #3D130E;
-  --cerulean: #4285F4;
-  --blush: #D4A59A;
-  --ivory: #F3E0DC;
-  --ivory-light: #FAF4F2;
+  /* =========================================================================
+     SKYVERIYA Balanced Semantic Colour System
+     Guidelines:
+     - 70% Pale Ivory: primary page background and reading areas
+     - 20% Terracotta: the Home hero and limited intentional brand areas
+     - 10% Supporting: Oxblood for primary text, accessible blue for primary actions
+     ========================================================================= */
 
-  /* Restrained Typography Pairing: Josefin Sans + Hoefler Text / Georgia */
+  /* Palette Primitives */
+  --color-ivory: #F3E0DC;
+  --color-ivory-light: #FAF4F2;
+  --color-terracotta: #BC4639;
+  --color-oxblood: #5C2018;
+  --color-oxblood-muted: #7A2E24;
+  --color-dusty-rose: #D4A59A;
+
+  /* Accessible Primary Action Blue (Contrast ratio > 4.5:1 with white text) */
+  --color-blue-action: #1D4ED8;
+  --color-blue-action-hover: #1E40AF;
+  --color-blue-focus: #2563EB;
+
+  /* Semantic Tokens */
+  --bg-page: var(--color-ivory);
+  --bg-surface: var(--color-ivory-light);
+  --bg-brand: var(--color-terracotta);
+
+  --text-primary: var(--color-oxblood);
+  --text-muted: var(--color-oxblood-muted);
+  --text-inverse: var(--color-ivory);
+  --text-inverse-muted: var(--color-dusty-rose);
+
+  --border-subtle: rgba(92, 32, 24, 0.14);
+  --border-medium: rgba(92, 32, 24, 0.28);
+  --border-inverse: rgba(243, 224, 220, 0.25);
+
+  --action-primary: var(--color-blue-action);
+  --action-primary-hover: var(--color-blue-action-hover);
+  --focus-ring: var(--color-blue-focus);
+
+  /* Typography */
   --font-serif-editorial: "Hoefler Text", Georgia, Garamond, "Times New Roman", serif;
   --font-sans-editorial: var(--font-josefin), "Josefin Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 @theme inline {
-  --color-terracotta: var(--terracotta);
-  --color-wine: var(--wine);
-  --color-wine-deep: var(--wine-deep);
-  --color-cerulean: var(--cerulean);
-  --color-blush: var(--blush);
-  --color-ivory: var(--ivory);
-  --color-ivory-light: var(--ivory-light);
+  --color-page: var(--bg-page);
+  --color-surface: var(--bg-surface);
+  --color-brand: var(--bg-brand);
+  --color-oxblood: var(--color-oxblood);
+  --color-oxblood-muted: var(--color-oxblood-muted);
+  --color-ivory: var(--color-ivory);
+  --color-ivory-light: var(--color-ivory-light);
+  --color-dusty-rose: var(--color-dusty-rose);
+  --color-terracotta: var(--color-terracotta);
+  --color-blue-action: var(--color-blue-action);
+  --color-blue-action-hover: var(--color-blue-action-hover);
 
   --font-display: var(--font-sans-editorial);
   --font-serif: var(--font-serif-editorial);
 }
 
 body {
-  background-color: var(--terracotta);
-  color: var(--ivory);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
   font-family: var(--font-serif-editorial);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -46,8 +80,13 @@ body {
   font-family: var(--font-serif-editorial);
 }
 
-/* Subtle Bespoke Paper Grain Overlay */
+/* Subtle Paper Grain Overlay */
 .editorial-grain {
+  background-image: radial-gradient(rgba(92, 32, 24, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.editorial-grain-inverse {
   background-image: radial-gradient(rgba(243, 224, 220, 0.06) 1px, transparent 0);
   background-size: 24px 24px;
 }
@@ -57,11 +96,61 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Consistent Button Styles */
+.btn-primary {
+  background-color: var(--action-primary);
+  color: #ffffff;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--action-primary-hover);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-primary);
+  background-color: rgba(92, 32, 24, 0.04);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.btn-secondary-inverse {
+  background-color: transparent;
+  color: var(--text-inverse);
+  border: 1px solid var(--border-inverse);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-secondary-inverse:hover {
+  border-color: var(--text-inverse);
+  background-color: rgba(243, 224, 220, 0.08);
+}
+
+.btn-secondary-inverse:focus-visible {
+  outline: 2px solid var(--color-ivory);
+  outline-offset: 2px;
+}
+
 /* Restrained Dialog Fade In */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.98);
+    transform: scale(0.99);
   }
   to {
     opacity: 1;
