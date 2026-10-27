@@ -49,7 +49,7 @@ export default function NineCloudsSection() {
               <div className="w-full h-32 sm:h-36 flex items-center justify-center mb-4">
                 <NineCloudsArt
                   cloudType={service.cloudType}
-                  className="w-44 h-28 sm:w-48 sm:h-30 transition-transform duration-200 group-hover:scale-105"
+                  className="w-48 h-28 sm:w-56 sm:h-32 transition-transform duration-200 group-hover:scale-105"
                   strokeColor="#5C2018"
                   fillColor="#BC4639"
                   secondaryColor="#D4A59A"

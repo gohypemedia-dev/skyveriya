@@ -49,7 +49,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-light text-2xl sm:text-3xl uppercase tracking-[0.14em] text-[#5C2018] mb-10">
             What we believe
-          </h2>
+          </h2>https://127.0.0.1:56345/static/artifacts/5debe0e6-fe0a-4afb-8d19-6b0e4da99ca0/.user_uploaded/media_1793100306934.png?csrf=1ec88d73-9772-4e99-914a-4e9307202eea
 
           <div className="space-y-6 border-l-2 border-[#BC4639] pl-6 font-editorial text-xl sm:text-2xl text-[#5C2018] leading-snug">
             <p>Art that is documented lasts.</p>
