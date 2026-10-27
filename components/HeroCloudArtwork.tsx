@@ -17,21 +17,12 @@ export function LargeSweepingCloudBottomLeft({ className = "", opacity = 0.9 }: 
       aria-hidden="true"
     >
       <defs>
-        <radialGradient id="heroBLGlow" cx="45%" cy="60%" r="55%">
-          <stop offset="0%" stopColor="#4285F4" stopOpacity="0.28" />
-          <stop offset="50%" stopColor="#D4A59A" stopOpacity="0.12" />
-          <stop offset="90%" stopColor="#5C2018" stopOpacity="0.05" />
-          <stop offset="100%" stopColor="#BC4639" stopOpacity="0" />
-        </radialGradient>
         <linearGradient id="heroBLFill" x1="10%" y1="90%" x2="70%" y2="20%">
-          <stop offset="0%" stopColor="#5C2018" stopOpacity="0.35" />
-          <stop offset="40%" stopColor="#D4A59A" stopOpacity="0.18" />
-          <stop offset="100%" stopColor="#F3E0DC" stopOpacity="0.1" />
+          <stop offset="0%" stopColor="#5C2018" stopOpacity="0.25" />
+          <stop offset="50%" stopColor="#D4A59A" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="#F3E0DC" stopOpacity="0.05" />
         </linearGradient>
       </defs>
-
-      {/* Atmospheric depth glow */}
-      <circle cx="260" cy="240" r="160" fill="url(#heroBLGlow)" />
 
       {/* Main Outer Contour Silhouette */}
       <path
@@ -129,20 +120,12 @@ export function ComplementaryCloudTopRight({ className = "", opacity = 0.88 }: {
       aria-hidden="true"
     >
       <defs>
-        <radialGradient id="heroTRGlow" cx="60%" cy="35%" r="50%">
-          <stop offset="0%" stopColor="#4285F4" stopOpacity="0.25" />
-          <stop offset="60%" stopColor="#D4A59A" stopOpacity="0.1" />
-          <stop offset="100%" stopColor="#BC4639" stopOpacity="0" />
-        </radialGradient>
         <linearGradient id="heroTRFill" x1="90%" y1="10%" x2="20%" y2="80%">
-          <stop offset="0%" stopColor="#5C2018" stopOpacity="0.32" />
-          <stop offset="50%" stopColor="#D4A59A" stopOpacity="0.16" />
-          <stop offset="100%" stopColor="#F3E0DC" stopOpacity="0.08" />
+          <stop offset="0%" stopColor="#5C2018" stopOpacity="0.25" />
+          <stop offset="50%" stopColor="#D4A59A" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="#F3E0DC" stopOpacity="0.05" />
         </linearGradient>
       </defs>
-
-      {/* Ambient Radial Lighting Glow */}
-      <circle cx="320" cy="120" r="140" fill="url(#heroTRGlow)" />
 
       {/* Outer Contour Silhouette */}
       <path

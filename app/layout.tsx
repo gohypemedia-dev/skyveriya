@@ -11,8 +11,7 @@ const josefinSans = Josefin_Sans({
 
 export const metadata: Metadata = {
   title: "SKYVERIYA — The World of Creators",
-  description:
-    "A bespoke editorial atelier and creative collective. Nine Clouds, infinite values. Bespoke creative direction, design, and storytelling.",
+  description: "SKYVERIYA — The World of Creators. Nine Clouds, infinite values.",
 };
 
 export default function RootLayout({
