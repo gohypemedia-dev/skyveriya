@@ -152,7 +152,7 @@ export default function Hero() {
           Nine Clouds, infinite values
         </p>
 
-        {/* Coordinated Actions: Primary Blue & Secondary Inverse Outline */}
+        {/* Coordinated Actions: Primary Blue Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
           <Link
             href="/contact"
@@ -163,7 +163,7 @@ export default function Hero() {
 
           <a
             href="#services"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full btn-secondary-inverse font-display text-xs uppercase tracking-[0.16em] font-medium"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full btn-primary font-display text-xs uppercase tracking-[0.16em] font-medium shadow-sm"
           >
             View services
           </a>
