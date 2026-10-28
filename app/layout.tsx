@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const josefinSans = Josefin_Sans({
   variable: "--font-josefin",
@@ -26,12 +27,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="min-h-full flex flex-col bg-[#F3E0DC] text-[#5C2018] selection:bg-[#5C2018] selection:text-[#F3E0DC]"
+        className="min-h-full flex flex-col bg-[#BC4639] text-[#F3E0DC] selection:bg-[#F3E0DC] selection:text-[#5C2018]"
         suppressHydrationWarning
       >
+        <Header />
         {children}
       </body>
     </html>
   );
 }
-

@@ -21,10 +21,10 @@ export default function HowWeWork() {
   return (
     <section
       id="how-we-work"
-      className="relative w-full py-20 sm:py-28 px-4 sm:px-8 lg:px-16 bg-[#F3E0DC] text-[#5C2018] select-none"
+      className="relative w-full py-20 sm:py-28 px-4 sm:px-8 lg:px-16 bg-[#BC4639] text-[#F3E0DC] select-none border-t border-[#F3E0DC]/15"
     >
       <div className="max-w-4xl mx-auto">
-        <h2 className="font-display font-light text-2xl sm:text-3xl lg:text-4xl uppercase tracking-[0.14em] text-[#5C2018] mb-12 sm:mb-16">
+        <h2 className="font-display font-light text-2xl sm:text-3xl lg:text-4xl uppercase tracking-[0.14em] text-[#F3E0DC] mb-12 sm:mb-16">
           How we work
         </h2>
 
@@ -32,12 +32,12 @@ export default function HowWeWork() {
           {principles.map((item, idx) => (
             <div
               key={idx}
-              className="pt-8 border-t border-[#5C2018]/15 first:border-t-0 first:pt-0"
+              className="pt-8 border-t border-[#F3E0DC]/20 first:border-t-0 first:pt-0"
             >
-              <h3 className="font-editorial text-xl sm:text-2xl font-normal text-[#5C2018] mb-3">
+              <h3 className="font-editorial text-xl sm:text-2xl font-normal text-[#F3E0DC] mb-3">
                 {item.title}
               </h3>
-              <p className="font-editorial text-base sm:text-lg text-[#5C2018]/85 leading-relaxed max-w-2xl">
+              <p className="font-editorial text-base sm:text-lg text-[#F3E0DC]/85 leading-relaxed max-w-2xl">
                 {item.body}
               </p>
             </div>

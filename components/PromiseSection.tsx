@@ -5,13 +5,13 @@ import Link from "next/link";
 
 export default function PromiseSection() {
   return (
-    <section className="relative w-full py-20 sm:py-28 px-4 sm:px-8 lg:px-16 bg-[#F3E0DC] text-[#5C2018] select-none border-t border-[#5C2018]/15">
+    <section className="relative w-full py-20 sm:py-28 px-4 sm:px-8 lg:px-16 bg-[#BC4639] text-[#F3E0DC] select-none border-t border-[#F3E0DC]/15">
       <div className="max-w-3xl mx-auto flex flex-col items-start text-left">
-        <h2 className="font-editorial italic text-2xl sm:text-3xl lg:text-4xl text-[#5C2018] leading-snug font-normal mb-8 sm:mb-10">
+        <h2 className="font-editorial italic text-2xl sm:text-3xl lg:text-4xl text-[#F3E0DC] leading-snug font-normal mb-8 sm:mb-10">
           Our promise is in our tagline: nine skies entrusted.
         </h2>
 
-        <div className="space-y-6 font-editorial text-base sm:text-lg text-[#5C2018]/85 leading-relaxed mb-10 sm:mb-12">
+        <div className="space-y-6 font-editorial text-base sm:text-lg text-[#F3E0DC]/90 leading-relaxed mb-10 sm:mb-12">
           <p>
             Nine connected services, from legal assistance and documentation to marketing, logistics, wealth and purpose, come together under one roof. You don't piece together nine different providers, you trust one team with all of them.
           </p>
@@ -27,7 +27,7 @@ export default function PromiseSection() {
 
         <Link
           href="/contact"
-          className="inline-flex items-center px-8 py-3.5 rounded-full btn-primary font-display text-xs uppercase tracking-[0.16em] font-medium shadow-sm"
+          className="inline-flex items-center px-8 py-3.5 rounded-full bg-[#F3E0DC] text-[#5C2018] font-display text-xs uppercase tracking-[0.16em] font-medium transition-colors hover:bg-[#FAF4F2]"
         >
           Get in touch
         </Link>

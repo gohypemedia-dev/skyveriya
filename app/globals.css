@@ -2,39 +2,40 @@
 
 :root {
   /* =========================================================================
-     SKYVERIYA Balanced Semantic Colour System
-     Guidelines:
-     - 70% Pale Ivory: primary page background and reading areas
-     - 20% Terracotta: the Home hero and limited intentional brand areas
-     - 10% Supporting: Oxblood for primary text, accessible blue for primary actions
+     SKYVERIYA Core Brand Palette
+     - Primary Brick-Red Background: Terracotta #BC4639
+     - Primary Reading Text: Pale Ivory #F3E0DC
+     - Supporting & Muted: Dusty Rose #D4A59A, Deep Wine #3D130E, Oxblood #5C2018
+     - Action Blue: #1D4ED8
      ========================================================================= */
 
   /* Palette Primitives */
-  --color-ivory: #F3E0DC;
-  --color-ivory-light: #FAF4F2;
   --color-terracotta: #BC4639;
   --color-oxblood: #5C2018;
   --color-oxblood-muted: #7A2E24;
+  --color-wine-deep: #3D130E;
   --color-dusty-rose: #D4A59A;
+  --color-ivory: #F3E0DC;
+  --color-ivory-light: #FAF4F2;
 
-  /* Accessible Primary Action Blue (Contrast ratio > 4.5:1 with white text) */
+  /* Accessible Primary Action Blue */
   --color-blue-action: #1D4ED8;
   --color-blue-action-hover: #1E40AF;
   --color-blue-focus: #2563EB;
 
-  /* Semantic Tokens */
-  --bg-page: var(--color-ivory);
-  --bg-surface: var(--color-ivory-light);
+  /* Semantic Tokens - Restored Brick-Red Theme */
+  --bg-page: var(--color-terracotta);
+  --bg-surface: var(--color-terracotta);
   --bg-brand: var(--color-terracotta);
 
-  --text-primary: var(--color-oxblood);
-  --text-muted: var(--color-oxblood-muted);
-  --text-inverse: var(--color-ivory);
-  --text-inverse-muted: var(--color-dusty-rose);
+  --text-primary: var(--color-ivory);
+  --text-muted: var(--color-dusty-rose);
+  --text-inverse: var(--color-oxblood);
+  --text-inverse-muted: var(--color-oxblood-muted);
 
-  --border-subtle: rgba(92, 32, 24, 0.14);
-  --border-medium: rgba(92, 32, 24, 0.28);
-  --border-inverse: rgba(243, 224, 220, 0.25);
+  --border-subtle: rgba(243, 224, 220, 0.15);
+  --border-medium: rgba(243, 224, 220, 0.3);
+  --border-inverse: rgba(92, 32, 24, 0.25);
 
   --action-primary: var(--color-blue-action);
   --action-primary-hover: var(--color-blue-action-hover);
@@ -51,6 +52,7 @@
   --color-brand: var(--bg-brand);
   --color-oxblood: var(--color-oxblood);
   --color-oxblood-muted: var(--color-oxblood-muted);
+  --color-wine-deep: var(--color-wine-deep);
   --color-ivory: var(--color-ivory);
   --color-ivory-light: var(--color-ivory-light);
   --color-dusty-rose: var(--color-dusty-rose);
@@ -82,7 +84,7 @@ body {
 
 /* Subtle Paper Grain Overlay */
 .editorial-grain {
-  background-image: radial-gradient(rgba(92, 32, 24, 0.04) 1px, transparent 0);
+  background-image: radial-gradient(rgba(243, 224, 220, 0.06) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
@@ -114,31 +116,31 @@ html {
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border-medium);
+  color: var(--color-ivory);
+  border: 1px solid rgba(243, 224, 220, 0.35);
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-secondary:hover {
-  border-color: var(--text-primary);
-  background-color: rgba(92, 32, 24, 0.04);
+  border-color: var(--color-ivory);
+  background-color: rgba(243, 224, 220, 0.1);
 }
 
 .btn-secondary:focus-visible {
-  outline: 2px solid var(--focus-ring);
+  outline: 2px solid var(--color-ivory);
   outline-offset: 2px;
 }
 
 .btn-secondary-inverse {
   background-color: transparent;
-  color: var(--text-inverse);
-  border: 1px solid var(--border-inverse);
+  color: var(--color-ivory);
+  border: 1px solid rgba(243, 224, 220, 0.35);
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-secondary-inverse:hover {
-  border-color: var(--text-inverse);
-  background-color: rgba(243, 224, 220, 0.08);
+  border-color: var(--color-ivory);
+  background-color: rgba(243, 224, 220, 0.1);
 }
 
 .btn-secondary-inverse:focus-visible {

@@ -146,7 +146,7 @@ export default function ServiceDialog({
         <div className="relative z-10 pt-5 border-t border-[#5C2018]/15 flex flex-col sm:flex-row items-center justify-end gap-3">
           <button
             onClick={onClose}
-            className="w-full sm:w-auto px-6 py-2.5 rounded-full btn-secondary font-display text-xs uppercase tracking-[0.18em]"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-full border border-[#5C2018]/30 text-[#5C2018] hover:border-[#5C2018] hover:bg-[#5C2018]/5 font-display text-xs uppercase tracking-[0.18em] transition-colors"
           >
             Close
           </button>

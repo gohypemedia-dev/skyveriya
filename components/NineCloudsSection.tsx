@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import { servicesData, ServiceItem } from "@/data/servicesData";
-import NineCloudsArt from "./NineCloudsArt";
+import ServiceCloudCard from "./ServiceCloudCard";
 import ServiceDialog from "./ServiceDialog";
 
 export default function NineCloudsSection() {
@@ -22,46 +22,27 @@ export default function NineCloudsSection() {
   return (
     <section
       id="services"
-      className="relative w-full py-20 sm:py-28 px-4 sm:px-8 lg:px-16 bg-[#F3E0DC] text-[#5C2018] select-none border-t border-[#5C2018]/15"
+      className="relative w-full py-20 sm:py-28 px-4 sm:px-8 lg:px-16 bg-[#BC4639] text-[#F3E0DC] select-none border-t border-[#F3E0DC]/15"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
         <div className="text-center mb-14 sm:mb-20">
-          <h2 className="font-display font-light text-2xl sm:text-3xl lg:text-4xl uppercase tracking-[0.16em] text-[#5C2018]">
+          <h2 className="font-display font-light text-2xl sm:text-3xl lg:text-4xl uppercase tracking-[0.16em] text-[#F3E0DC]">
             Services
           </h2>
         </div>
 
-        {/* Nine Interactive Service Clouds Grid on Pale Ivory */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+        {/* Nine Interactive Service Clouds Grid on Brick Red (Transparent surrounding area, no card boxes) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 items-start">
           {servicesData.map((service) => (
-            <button
+            <ServiceCloudCard
               key={service.id}
-              ref={(el) => {
+              service={service}
+              onClick={handleCloudClick}
+              buttonRef={(el) => {
                 triggerRefs.current[service.id] = el;
               }}
-              onClick={() => handleCloudClick(service)}
-              className="group flex flex-col items-center text-center p-6 sm:p-8 rounded-xl border border-[#5C2018]/15 bg-[#FAF4F2] hover:border-[#5C2018]/40 hover:bg-[#FAF4F2]/90 transition-all focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]"
-              aria-label={`Open details for ${service.title}`}
-              aria-haspopup="dialog"
-            >
-              {/* Cohesive Cloud Artwork in Oxblood & Terracotta */}
-              <div className="w-full h-32 sm:h-36 flex items-center justify-center mb-4">
-                <NineCloudsArt
-                  cloudType={service.cloudType}
-                  className="w-48 h-28 sm:w-56 sm:h-32 transition-transform duration-200 group-hover:scale-105"
-                  strokeColor="#5C2018"
-                  fillColor="#BC4639"
-                  secondaryColor="#D4A59A"
-                  accentColor="#BC4639"
-                />
-              </div>
-
-              {/* Consistently Oxblood Service Title */}
-              <h3 className="font-display font-medium text-xs sm:text-sm uppercase tracking-[0.14em] text-[#5C2018] leading-relaxed max-w-xs transition-colors">
-                {service.title}
-              </h3>
-            </button>
+            />
           ))}
         </div>
       </div>

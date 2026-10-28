@@ -118,9 +118,9 @@ export default function NineCloudsArt({
   cloudType,
   className = "w-44 h-28",
   strokeColor = "#5C2018",
-  fillColor = "#BC4639",
+  fillColor = "#F3E0DC",
   secondaryColor = "#D4A59A",
-  accentColor = "#BC4639",
+  accentColor = "#5C2018",
 }: {
   cloudType: number;
   className?: string;

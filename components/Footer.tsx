@@ -12,42 +12,42 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative w-full bg-[#FAF4F2] text-[#5C2018] border-t border-[#5C2018]/15 select-none">
+    <footer className="relative w-full bg-[#BC4639] text-[#F3E0DC] border-t border-[#F3E0DC]/15 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pb-12 border-b border-[#5C2018]/15">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pb-12 border-b border-[#F3E0DC]/15">
           {/* Brand Identity */}
           <div className="flex flex-col space-y-3">
             <Link href="/" className="inline-block focus:outline-none" aria-label="SKYVERIYA Home">
-              <Wordmark showSubtitle={true} light={false} />
+              <Wordmark showSubtitle={true} light={true} />
             </Link>
-            <p className="font-display text-xs uppercase tracking-[0.16em] text-[#7A2E24]">
+            <p className="font-display text-xs uppercase tracking-[0.16em] text-[#D4A59A]">
               Nine Clouds, infinite values
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <span className="font-display text-xs uppercase tracking-[0.18em] text-[#7A2E24] block mb-4 font-semibold">
+            <span className="font-display text-xs uppercase tracking-[0.18em] text-[#D4A59A] block mb-4 font-semibold">
               Navigation
             </span>
-            <ul className="space-y-2.5 font-display text-xs tracking-[0.14em] uppercase text-[#5C2018]/85">
+            <ul className="space-y-2.5 font-display text-xs tracking-[0.14em] uppercase text-[#F3E0DC]/85">
               <li>
-                <Link href="/" className="hover:text-[#5C2018] hover:underline underline-offset-4 transition-colors">
+                <Link href="/" className="hover:text-[#F3E0DC] hover:underline underline-offset-4 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-[#5C2018] hover:underline underline-offset-4 transition-colors">
+                <Link href="/about" className="hover:text-[#F3E0DC] hover:underline underline-offset-4 transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-[#5C2018] hover:underline underline-offset-4 transition-colors">
+                <Link href="/services" className="hover:text-[#F3E0DC] hover:underline underline-offset-4 transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#5C2018] hover:underline underline-offset-4 transition-colors">
+                <Link href="/contact" className="hover:text-[#F3E0DC] hover:underline underline-offset-4 transition-colors">
                   Contact
                 </Link>
               </li>
@@ -56,12 +56,12 @@ export default function Footer() {
 
           {/* Supplied Contact Information */}
           <div>
-            <span className="font-display text-xs uppercase tracking-[0.18em] text-[#7A2E24] block mb-4 font-semibold">
+            <span className="font-display text-xs uppercase tracking-[0.18em] text-[#D4A59A] block mb-4 font-semibold">
               Contact
             </span>
-            <div className="space-y-3 font-display text-xs tracking-wider text-[#5C2018]/85">
+            <div className="space-y-3 font-display text-xs tracking-wider text-[#F3E0DC]/85">
               <div>
-                <a href="mailto:info@skyveriya.com" className="hover:text-[#1D4ED8] transition-colors">
+                <a href="mailto:info@skyveriya.com" className="hover:text-[#FAF4F2] underline underline-offset-4 transition-colors">
                   info@skyveriya.com
                 </a>
               </div>
@@ -72,7 +72,7 @@ export default function Footer() {
                     href="https://wa.me/917400032221"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#1D4ED8] transition-colors"
+                    className="hover:text-[#FAF4F2] underline underline-offset-4 transition-colors"
                   >
                     +91 74000 32221
                   </a>
@@ -82,18 +82,18 @@ export default function Footer() {
                     href="https://wa.me/919512216644"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#1D4ED8] transition-colors"
+                    className="hover:text-[#FAF4F2] underline underline-offset-4 transition-colors"
                   >
                     +91 95122 16644
                   </a>
                 </div>
               </div>
 
-              <div className="font-editorial text-xs text-[#5C2018]/80">
+              <div className="font-editorial text-xs text-[#F3E0DC]/80">
                 Mumbai · By appointment only
               </div>
 
-              <div className="text-xs text-[#5C2018]/65 pt-1">
+              <div className="text-xs text-[#D4A59A] pt-1">
                 Instagram · LinkedIn
               </div>
             </div>
@@ -101,14 +101,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] font-display uppercase tracking-[0.16em] text-[#7A2E24] gap-4">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] font-display uppercase tracking-[0.16em] text-[#D4A59A] gap-4">
           <div>
             SKYVERIYA
           </div>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-[#5C2018] hover:text-[#1D4ED8] transition-colors"
+            className="flex items-center gap-1.5 text-[#F3E0DC] hover:text-[#FAF4F2] transition-colors"
             aria-label="Back to top"
           >
             <span>Back to top</span>
