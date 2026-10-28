@@ -124,8 +124,8 @@ export default function ContactFormClient() {
             </div>
           </div>
 
-          {/* Right Column: Contact Form - Intentional Deep Wine Container */}
-          <div className="lg:col-span-7 bg-[#3D130E] p-6 sm:p-8 rounded-xl border border-[#F3E0DC]/15 shadow-md">
+          {/* Right Column: Contact Form - Warm Muted Oxblood Container */}
+          <div className="lg:col-span-7 bg-[#7A2E24] p-6 sm:p-8 rounded-xl border border-[#F3E0DC]/20 shadow-md">
             {submitted ? (
               <div className="space-y-6 py-4 animate-fade-in">
                 <div className="space-y-2">
@@ -137,7 +137,7 @@ export default function ContactFormClient() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-lg bg-[#240A07]/60 border border-[#F3E0DC]/15 font-display text-xs space-y-1.5 text-[#F3E0DC]">
+                <div className="p-4 rounded-lg bg-[#3D130E]/50 border border-[#F3E0DC]/20 font-display text-xs space-y-1.5 text-[#F3E0DC]">
                   <p><span className="text-[#D4A59A] font-medium">Name:</span> {formData.name}</p>
                   <p><span className="text-[#D4A59A] font-medium">Email:</span> {formData.email}</p>
                   <p><span className="text-[#D4A59A] font-medium">Service of interest:</span> {getSelectedServiceTitle()}</p>
@@ -187,7 +187,7 @@ export default function ContactFormClient() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-md bg-[#240A07]/60 border border-[#F3E0DC]/20 text-[#F3E0DC] font-display text-sm focus:outline-none focus:border-[#F3E0DC] focus:ring-1 focus:ring-[#F3E0DC]"
+                    className="w-full px-4 py-3 rounded-md bg-[#3D130E]/50 border border-[#F3E0DC]/25 text-[#F3E0DC] font-display text-sm focus:outline-none focus:border-[#F3E0DC] focus:ring-1 focus:ring-[#F3E0DC]"
                   />
                 </div>
 
@@ -204,7 +204,7 @@ export default function ContactFormClient() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-md bg-[#240A07]/60 border border-[#F3E0DC]/20 text-[#F3E0DC] font-display text-sm focus:outline-none focus:border-[#F3E0DC] focus:ring-1 focus:ring-[#F3E0DC]"
+                    className="w-full px-4 py-3 rounded-md bg-[#3D130E]/50 border border-[#F3E0DC]/25 text-[#F3E0DC] font-display text-sm focus:outline-none focus:border-[#F3E0DC] focus:ring-1 focus:ring-[#F3E0DC]"
                   />
                 </div>
 
@@ -219,14 +219,14 @@ export default function ContactFormClient() {
                     id="contact-service"
                     value={formData.serviceId}
                     onChange={(e) => setFormData({ ...formData, serviceId: e.target.value })}
-                    className="w-full px-4 py-3 rounded-md bg-[#240A07]/60 border border-[#F3E0DC]/20 text-[#F3E0DC] font-display text-sm focus:outline-none focus:border-[#F3E0DC] focus:ring-1 focus:ring-[#F3E0DC]"
+                    className="w-full px-4 py-3 rounded-md bg-[#3D130E]/50 border border-[#F3E0DC]/25 text-[#F3E0DC] font-display text-sm focus:outline-none focus:border-[#F3E0DC] focus:ring-1 focus:ring-[#F3E0DC]"
                   >
                     {servicesData.map((s) => (
-                      <option key={s.id} value={s.id} className="bg-[#3D130E] text-[#F3E0DC]">
+                      <option key={s.id} value={s.id} className="bg-[#7A2E24] text-[#F3E0DC]">
                         {s.title}
                       </option>
                     ))}
-                    <option value="not-sure" className="bg-[#3D130E] text-[#F3E0DC]">Not sure yet</option>
+                    <option value="not-sure" className="bg-[#7A2E24] text-[#F3E0DC]">Not sure yet</option>
                   </select>
                 </div>
 
@@ -242,7 +242,7 @@ export default function ContactFormClient() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-md bg-[#240A07]/60 border border-[#F3E0DC]/20 text-[#F3E0DC] font-editorial text-sm focus:outline-none focus:border-[#F3E0DC] focus:ring-1 focus:ring-[#F3E0DC]"
+                    className="w-full px-4 py-3 rounded-md bg-[#3D130E]/50 border border-[#F3E0DC]/25 text-[#F3E0DC] font-editorial text-sm focus:outline-none focus:border-[#F3E0DC] focus:ring-1 focus:ring-[#F3E0DC]"
                   />
                 </div>
 
